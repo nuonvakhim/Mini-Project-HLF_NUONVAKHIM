@@ -21,13 +21,13 @@ setGlobalsForPeer0Org2(){
 
 joinChannel1(){
     setGlobalsForPeer0Org1
-    peer channel join -b ./artifact/channel.block
+    peer channel join -b ./artifact/mychannel.block
     peer channel list
 } 
 
 joinChannel2(){
     setGlobalsForPeer0Org2
-    peer channel join -b ./artifact/channel.block
+    peer channel join -b ./artifact/mychannel.block
     peer channel list
 } 
 

@@ -137,14 +137,14 @@ chaincodeInvokeInit(){
     --isInit -C '{"Args":["InitLedger"]}'
 }
 
-# presetup
-packageChaincode
-installChaincode
+# # presetup
+# packageChaincode
+# installChaincode
 queryInstalled
 
 # approveForMyOrg1
-# approveForMyOrg2
-checkCommitReadyness
-commitChaincodeDefination
-queryCommitted 
+approveForMyOrg2
+# checkCommitReadyness
+# commitChaincodeDefination
+# queryCommitted 
 # chaincodeInvokeInit
