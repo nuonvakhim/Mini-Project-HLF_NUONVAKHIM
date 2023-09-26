@@ -132,19 +132,21 @@ chaincodeInvokeInit(){
     setGlobalsForPeer0Org1
 
     peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${ORDERER_CA} \
+    -C ${CHANNEL_NAME} \
+    -n ${CC_NAME} \
     --peerAddresses localhost:7051 --tlsRootCertFiles ${CORE_PEER_TLS_ROOTCERT_FILE1} \
     --peerAddresses localhost:7053 --tlsRootCertFiles ${CORE_PEER_TLS_ROOTCERT_FILE2} \
     --isInit -C '{"Args":["InitLedger"]}'
 }
 
 # # presetup
-# packageChaincode
-# installChaincode
+packageChaincode
+installChaincode
 queryInstalled
 
-# approveForMyOrg1
+approveForMyOrg1
 approveForMyOrg2
-# checkCommitReadyness
-# commitChaincodeDefination
-# queryCommitted 
-# chaincodeInvokeInit
+checkCommitReadyness
+commitChaincodeDefination
+queryCommitted 
+chaincodeInvokeInit
