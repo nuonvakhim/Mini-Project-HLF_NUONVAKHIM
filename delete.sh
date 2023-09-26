@@ -1,5 +1,5 @@
 sudo rm -R ./artifact
-sudo rm -R ./ledger
+sudo rm -R ./ledger1
 sudo rm -R ./ledger2
 sudo rm -R ./crypto-config
 docker rm -f  $(docker ps -aq)

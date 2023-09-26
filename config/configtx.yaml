@@ -42,7 +42,7 @@ Organizations:
                 Rule: "OR('OrdererMSP.admin')"
 
         OrdererEndpoints:
-            - 127.0.0.1:7050
+            - orderer.example.com:7050
 
     - &Org1
         # DefaultOrg defines the organization which is used in the sampleconfig
@@ -70,7 +70,7 @@ Organizations:
                 Type: Signature
                 Rule: "OR('Org1MSP.admin')"
         AnchorPeers:
-          - Host: localhost
+          - Host: peer0.org1.example.com
             Port: 7051
     - &Org2
         # DefaultOrg defines the organization which is used in the sampleconfig
@@ -98,7 +98,7 @@ Organizations:
                 Type: Signature
                 Rule: "OR('Org2MSP.admin')"
         AnchorPeers:
-          - Host: localhost
+          - Host: peer0.org2.example.com
             Port: 7053
 ################################################################################
 #
@@ -307,16 +307,16 @@ Profiles:
             Organizations:
                 - *OrdererOrg
             Capabilities: *OrdererCapabilities
-        Consortium: TestNetwork
         Consortiums:
-          TestNetwork:
-            Organizations:
-              - <<: *Org1
-              - <<: *Org2
+            TestNetworkConsortium:
+                Organizations:
+                    - <<: *Org1
+                    - <<: *Org2
         Application:
             <<: *ApplicationDefaults
             Organizations:
                 - *Org1
                 - *Org2
             Capabilities: *ApplicationCapabilities
+        Consortium: TestNetworkConsortium
         

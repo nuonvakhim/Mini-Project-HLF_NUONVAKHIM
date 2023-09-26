@@ -8,4 +8,4 @@ export CORE_PEER_MSPCONFIGPATH=${PWD}/crypto-config/peerOrganizations/org1.examp
 export CORE_PEER_ADDRESS=peer0.org1.example.com:7051
 export CHANNEL_NAME=mychannel
 
-peer channel create -o 127.0.0.1:7050 -c mychannel -f ./artifact/mychannel.tx --tls --cafile $ORDERER_CA --outputBlock ./artifact/channel.block 
+peer channel create -o 127.0.0.1:7050 -c mychannel -f ./artifact/mychannel.tx --tls --cafile $ORDERER_CA --outputBlock ./artifact/mychannel.block 
